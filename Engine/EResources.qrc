@@ -1,0 +1,55 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="home">Resources/home.gif</file>
+        <file alias="adminIcon">Resources/adminIcon.png</file>
+        <file alias="chatUserIcon">Resources/chatUser.png</file>
+        <file alias="editUserIcon">Resources/editUser.png</file>
+        <file alias="hostIcon">Resources/hostIcon.png</file>
+        <file alias="userIcon">Resources/userIcon.png</file>
+        <file alias="banUserIcon">Resources/banUser.png</file>
+        <file alias="protected">Resources/protected.png</file>
+        <file alias="find">Resources/find.png</file>
+        <file alias="stop">Resources/stop.png</file>
+        <file alias="globalSearch">Resources/globalSearch.png</file>
+        <file alias="search">Resources/search.png</file>
+        <file alias="refresh">Resources/refresh.png</file>
+        <file alias="language">Resources/language.png</file>
+        <file alias="box">Resources/box.png</file>
+        <file alias="info">Resources/info.png</file>
+        <file alias="key">Resources/key.png</file>
+        <file alias="users">Resources/users.png</file>
+        <file alias="create">Resources/create.png</file>
+        <file alias="leave">Resources/leaveRoom.png</file>
+        <file alias="quit">Resources/quit.png</file>
+        <file alias="wheel">Resources/wheel.png</file>
+        <file alias="startServer">Resources/startServer.png</file>
+        <file alias="server">Resources/server.png</file>
+        <file alias="add">Resources/add.png</file>
+        <file alias="dice">Resources/dice.png</file>
+        <file alias="settings">Resources/config.png</file>
+        <file alias="sZoomIn">Resources/sZoomIn.png</file>
+        <file alias="sZoomOut">Resources/sZoomOut.png</file>
+        <file alias="rotateLeft">Resources/rotateLeft.png</file>
+        <file alias="rotateRight">Resources/rotateRight.png</file>
+        <file alias="save">Resources/save.png</file>
+        <file alias="hide">Resources/hide.png</file>
+        <file alias="lock">Resources/lock.png</file>
+        <file alias="reload">Resources/reload.png</file>
+        <file alias="unlock">Resources/unlock.png</file>
+        <file alias="remove">Resources/remove.png</file>
+        <file alias="addUser">Resources/addUser.png</file>
+        <file alias="removeUser">Resources/removeUser.png</file>
+        <file alias="shuffle">Resources/shuffle.png</file>
+        <file alias="wait">Resources/wait.png</file>
+        <file alias="clock">Resources/clock.png</file>
+    </qresource>
+    <qresource prefix="/images/flags">
+        <file alias="portuguese">Resources/Flags/flagBrasil.png</file>
+        <file alias="chinese">Resources/Flags/flagChina.png</file>
+        <file alias="english">Resources/Flags/flagUS.png</file>
+    </qresource>
+    <qresource prefix="/language">
+        <file>Translations/enginetr_pt.qm</file>
+        <file>Translations/enginetr_zh.qm</file>
+    </qresource>
+</RCC>

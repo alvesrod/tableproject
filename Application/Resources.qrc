@@ -1,0 +1,14 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="menuBg">Resources/menuBg.jpg</file>
+        <file alias="imageDownload">Resources/imageDownload.png</file>
+        <file alias="imageError">Resources/imageError.png</file>
+        <file alias="imageRequest">Resources/imageRequest.png</file>
+        <file alias="hidden">Resources/hidden.png</file>
+        <file alias="liveTable">Resources/liveTable.png</file>
+    </qresource>
+    <qresource prefix="/language">
+        <file>Translations/apptr_pt.qm</file>
+        <file>Translations/apptr_zh.qm</file>
+    </qresource>
+</RCC>

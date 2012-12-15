@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserButtonBox</class>
+ <widget class="QWidget" name="UserButtonBox">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>161</width>
+    <height>58</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>100</width>
+    <height>10</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>190</width>
+    <height>80</height>
+   </size>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" rowstretch="0">
+   <property name="sizeConstraint">
+    <enum>QLayout::SetDefaultConstraint</enum>
+   </property>
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>0</number>
+   </property>
+   <property name="rightMargin">
+    <number>4</number>
+   </property>
+   <property name="bottomMargin">
+    <number>0</number>
+   </property>
+   <property name="horizontalSpacing">
+    <number>6</number>
+   </property>
+   <property name="verticalSpacing">
+    <number>1</number>
+   </property>
+   <item row="0" column="2">
+    <widget class="QCommandLinkButton" name="banBtn">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>46</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>46</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Ban user</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../EResources.qrc">
+       <normaloff>:/images/banUserIcon</normaloff>:/images/banUserIcon</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0">
+    <widget class="QCommandLinkButton" name="privateMessageBtn">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>46</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>46</height>
+      </size>
+     </property>
+     <property name="toolTip">
+      <string>Private chat</string>
+     </property>
+     <property name="icon">
+      <iconset resource="../EResources.qrc">
+       <normaloff>:/images/chatUserIcon</normaloff>:/images/chatUserIcon</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="3">
+    <widget class="QCommandLinkButton" name="moreBtn">
+     <property name="enabled">
+      <bool>true</bool>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>48</width>
+       <height>46</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>48</width>
+       <height>46</height>
+      </size>
+     </property>
+     <property name="icon">
+      <iconset resource="../EResources.qrc">
+       <normaloff>:/images/editUserIcon</normaloff>:/images/editUserIcon</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>32</width>
+       <height>32</height>
+      </size>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>privateMessageBtn</tabstop>
+  <tabstop>banBtn</tabstop>
+  <tabstop>moreBtn</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../EResources.qrc"/>
+ </resources>
+ <connections/>
+</ui>
