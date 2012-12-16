@@ -1,10 +1,10 @@
 <?php 
 
 $DB_HOST_NAME="localhost"; 
-$DB_HOST_USER="admin"; 
-$DB_HOST_PASSWORD="DATABASEPASSWORD"; 
-$DB_NAME="chatro34_ubc"; 
+$DB_HOST_USER="databaseuser"; 
+$DB_HOST_PASSWORD="databasepassword"; 
+$DB_NAME="databasename"; 
 $ROOM_DAYS=3; 
 $CPASSWORD="pass"; 
-$APP_NAME="no name";
-$APP_SECRET="INSERT_HERE_APP_SECRET"; ?>
+$APP_NAME="App has no name";
+$APP_SECRET="TYPE_HERE"; ?>

@@ -42,7 +42,7 @@ void TableController::itemMoved(TableItem *item, QPoint position, bool finalMove
 {
     /* Check if you have permission to move the item: */
     if (!Permission::hasObjectPermission(Permission::OBJECT_INTERACT, room->user(), room->info(), item)) {
-        room->logText(tr("You don't have permission to move") + " \"" + item->getName() + "\"", Qt::gray);
+        room->logText(tr("You don't have permission to move") + getItemNameIfAllowed(item), Qt::gray);
         return;
     }
 
@@ -63,7 +63,7 @@ void TableController::removeItem(TableItem *item)
 {
     /* Check if you have permission to remove the item: */
     if (!Permission::hasObjectPermission(Permission::OBJECT_REMOVE, room->user(), room->info(), item)) {
-        room->logText(tr("You don't have permission to remove") + " \"" + item->getName() + "\"", Qt::gray);
+        room->logText(tr("You don't have permission to remove") + getItemNameIfAllowed(item), Qt::gray);
         return;
     }
 
@@ -78,7 +78,7 @@ void TableController::rotateItem(TableItem *item, qint16 rotation)
 {
     /* Check if you have permission to rotate the item: */
     if (!Permission::hasObjectPermission(Permission::OBJECT_INTERACT, room->user(), room->info(), item)) {
-        room->logText(tr("You don't have permission to rotate") + " \"" + item->getName() + "\"", Qt::gray);
+        room->logText(tr("You don't have permission to rotate") + getItemNameIfAllowed(item), Qt::gray);
         return;
     }
 
@@ -146,7 +146,7 @@ void TableController::handleRemoveObject(QByteArray message, RoomMember* user)
     RoomMember *from = room->user(userID);
     if (from) {
         QSound::play("Sound/itemRemove.wav");
-        room->logText(from->getNickname() + " " + tr("removed item") + " \"" + item->getName() + "\"", Qt::darkRed);
+        room->logText(from->getNickname() + " " + tr("removed item") + getItemNameIfAllowed(item), Qt::darkRed);
     }
 }
 
@@ -155,7 +155,7 @@ void TableController::lockItem(TableItem *item, QList<qint8> teams)
 {
     /* Check if you have permission to lock items: */
     if (!Permission::hasObjectPermission(Permission::OBJECT_LOCK_UNLOCK, room->user(), room->info(), item)) {
-        room->logText(tr("You don't have permission to lock") + " \"" + item->getName() + "\"", Qt::gray);
+        room->logText(tr("You don't have permission to lock") + getItemNameIfAllowed(item), Qt::gray);
         return;
     }
 
@@ -168,7 +168,7 @@ void TableController::hideItem(TableItem *item, QList<qint8> teams)
 {
     /* Check if you have permission to hide items: */
     if (!Permission::hasObjectPermission(Permission::OBJECT_SHOW_HIDE, room->user(), room->info(), item)) {
-        room->logText(tr("You don't have permission to hide") + " \"" + item->getName() + "\"", Qt::gray);
+        room->logText(tr("You don't have permission to hide") + getItemNameIfAllowed(item), Qt::gray);
         return;
     }
 
@@ -348,12 +348,12 @@ void TableController::handleOwnership(QByteArray message, RoomMember *user)
             QSound::play("Sound/possessItem.wav");
         updatePermission(item);
         room->logText(owner->getNickname() + " " + tr("is now the owner of")
-                      + " \"" + item->getName() + "\".", Qt::darkMagenta);
+                      + getItemNameIfAllowed(item), Qt::darkMagenta);
     } else {
         RoomMember *owner = room->user(item->getOwnerID());
         if (owner != NULL) {
             room->logText(owner->getNickname() + " " + tr("is not the owner of")
-                      + " \"" + item->getName() + "\" " + tr("anymore."), Qt::magenta);
+                      + getItemNameIfAllowed(item) + tr("anymore."), Qt::magenta);
             if (owner->isThatYou())
                 QSound::play("Sound/giveItemAway.wav");
         }
@@ -425,10 +425,23 @@ void TableController::setLockHideItem(QByteArray message, RoomMember *user, bool
     updatePermission(item);
 
     RoomMember *userWhoChanged = room->user(userID);
-    if (userWhoChanged != NULL)
-        room->logText(userWhoChanged->getNickname() + " " + tr("set item") + " \"" + item->getName() + "\" " +
-                  logString + " " + getTeams(teams), Qt::darkCyan);
+    if (userWhoChanged != NULL) {
 
+
+
+        room->logText(userWhoChanged->getNickname() + " " + tr("set item") + getItemNameIfAllowed(item) +
+                  logString + " " + getTeams(teams), Qt::darkCyan);
+    }
+
+}
+
+QString TableController::getItemNameIfAllowed(TableItem *item) {
+    QString itemName;
+    if ((item == NULL) || (item->isHiddenForYou()))
+        itemName = " [?] ";
+    else
+        itemName = " \"" + item->getName() + "\" ";
+    return itemName;
 }
 
 /** Called when permissions might have changed: */
@@ -558,7 +571,7 @@ void TableController::handleObjectReceived(QByteArray message, RoomMember *user)
 
     /* Display in the log the action that happened: */
     room->logText(owner->getNickname() + " "
-                  + tr("added item") + " \"" + item->getName() + "\"", Qt::darkGreen);
+                  + tr("added item") + getItemNameIfAllowed(item), Qt::darkGreen);
 }
 
 void TableController::handleObjectRequest(QByteArray message, RoomMember *user)

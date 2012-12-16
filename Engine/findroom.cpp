@@ -105,8 +105,11 @@ void FindRoom::connectToRoom(QString ip, int port, bool passwordProtected)
     RoomController *room = new RoomController( roomDescription , userSettings );
 
     /* Check if room is password protected. If yes, type the password: */
-    if (passwordProtected)
-        roomDescription->setPassword( getPassword() );
+    if (passwordProtected) {
+        QString password = getPassword();
+        if (password.isEmpty()) return;
+        roomDescription->setPassword( password );
+    }
 
     /* Close this window and signal to join the room: */
     this->close();

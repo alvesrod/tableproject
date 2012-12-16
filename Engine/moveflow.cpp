@@ -29,7 +29,7 @@ void MoveFlow::moveTo(QPoint position)
 {
     if (lastMoveReceived == position) return; //Avoid spam.
     lastMoveReceived = position;
-    qDebug() << "RECEIVED MOVE: " << position;
+    //qDebug() << "RECEIVED MOVE: " << position;
 
     if (position == finalPosition.toPoint()) return;
 

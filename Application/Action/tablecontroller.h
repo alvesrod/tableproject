@@ -139,6 +139,9 @@ private:
     /** Lock/unlock/hide/show an item based on the message: */
     void setLockHideItem(QByteArray message, RoomMember *user, bool lockAction);
 
+    /** @return the item name or "?" if the item is hidden: */
+    QString getItemNameIfAllowed(TableItem *item);
+
     RoomView *room;
     bool UDPMoveEnabled; //used to prevent spamming of move
 };

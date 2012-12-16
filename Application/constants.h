@@ -22,7 +22,7 @@
  * update to the latest version. Updates are done automatically.
  */
 
-#define APP_VERSION "0.6b"
+#define APP_VERSION "0.7b"
 
 /*
  * The Engine version below must match the version in the Engine library.
@@ -55,7 +55,7 @@
  * Ps: In order to publish rooms, you must also set the APP_SECRET
  * in the server side (through the config link in the web server).
  */
-#define APP_SECRET "INSERT_HERE_APP_SECRET"
+#define APP_SECRET "TYPE_HERE" //TYPE_HERE
 
 /** @warning IF YOU SHARE THIS CODE TO THE PUBLIC, YOU MUST CHANGE THE APP_SECRET! **/
 
