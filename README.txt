@@ -1,2 +1,2 @@
 This project is open-source.
-http://projectlivetable.ihostfull.com/main/
+http://projectlivetable.ihostfull.com
